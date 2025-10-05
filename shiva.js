@@ -6,7 +6,7 @@ const AiChat = require('./models/aichat/aiModel');
 
 
 const GEMINI_API_KEY = process.env.GEMINI_API || '';
-const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent';
+const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent';
 const BACKEND = 'https://server-backend-tdpa.onrender.com';
 
 const activeChannelsCache = new Map();
