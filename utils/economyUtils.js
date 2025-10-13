@@ -16,7 +16,7 @@ class EconomyUtils {
                 const hoursSinceLastPlayed = pet.lastPlayed ? 
                     (now - pet.lastPlayed) / (1000 * 60 * 60) : 24;
                 
-                // Decay stats over time
+          
                 if (hoursSinceLastFed > 12) {
                     pet.hunger = Math.max(0, pet.hunger - 5);
                     pet.health = Math.max(0, pet.health - 2);
@@ -49,7 +49,7 @@ class EconomyUtils {
             
             const totalBills = primaryProperty.monthlyRent + primaryProperty.utilities;
             
-            // Try to pay from wallet first, then family vault
+         
             if (profile.wallet >= totalBills) {
                 profile.wallet -= totalBills;
             } else if (profile.wallet + profile.familyVault >= totalBills) {
@@ -57,11 +57,11 @@ class EconomyUtils {
                 profile.wallet = 0;
                 profile.familyVault -= remaining;
             } else {
-                // Can't pay bills - add to unpaid and risk eviction
+              
                 const unpaid = totalBills - profile.wallet - profile.familyVault;
                 profile.wallet = 0;
                 profile.familyVault = 0;
-                // Handle eviction logic here
+                
             }
             
             await profile.save();
