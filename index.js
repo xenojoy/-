@@ -2,12 +2,13 @@ const { connectToDatabase } = require('./mongodb');
 const initializeBot = require('./utils/intializer');
 
 (async () => {
-    await initializeBot();
+
     await connectToDatabase();
 
     const client = require('./main');
     require('./shiva');
     loadEventHandlers(client);
+    await initializeBot();
 })();
 
 
