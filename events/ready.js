@@ -53,17 +53,24 @@ module.exports = {
         }
 
         async function getCurrentSongActivity() {
-            const activePlayers = Array.from(client.riffy.players.values()).filter(player => player.playing);
+            try {
+             
+                if (!client.riffy || !client.riffy.players) return null;
 
-            if (!activePlayers.length) return null;
+                const activePlayers = Array.from(client.riffy.players.values()).filter(p => p.playing);
+                if (!activePlayers.length) return null;
 
-            const player = activePlayers[0];
-            if (!player.current?.info?.title) return null;
+                const player = activePlayers[0];
+                if (!player.current?.info?.title) return null;
 
-            return {
-                name: `🎸 ${player.current.info.title}`,
-                type: ActivityType.Playing
-            };
+                return {
+                    name: `🎸 ${player.current.info.title}`,
+                    type: ActivityType.Playing
+                };
+            } catch (err) {
+                console.warn(`[STATUS] Error while checking song activity: ${err.message}`);
+                return null;
+            }
         }
 
         async function updateStatus() {
