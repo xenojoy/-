@@ -16,7 +16,7 @@ const lyricsStateManager = {
     startLyrics(guildId, data) {
         this.activeGuilds.set(guildId, { ...data, timestamp: Date.now() });
         this.stoppedGuilds.delete(guildId); 
-        //console.log(`✅ Lyrics STATE: STARTED for guild ${guildId}`);
+        console.log(`✅ Lyrics STATE: STARTED for guild ${guildId}`);
     },
     
     stopLyrics(guildId, permanent = false) {
@@ -260,7 +260,7 @@ module.exports = (client) => {
             defaultSearchPlatform: "ytmsearch",
             restVersion: "v4",
         });
-
+        
         client.riffy.on('nodeConnect', (node) => {
             console.log(`\x1b[34m[ V2 LAVALINK ]\x1b[0m Node connected: \x1b[32m${node.name}\x1b[0m`);
         });
@@ -1804,7 +1804,7 @@ module.exports = (client) => {
 
         client.on('raw', d => client.riffy.updateVoiceState(d));
 
-        client.once('ready', () => {
+        client.once('clientReady', () => {
             client.riffy.init(client.user.id);
             console.log('\x1b[35m[ V2 MUSIC ]\x1b[0m', '\x1b[32mAdvanced V2 Music System Active ✅\x1b[0m');
 
@@ -1814,7 +1814,70 @@ module.exports = (client) => {
                 }
             }, 5000);
         });
+                const initializeRiffy = async () => {
+            try {
+                if (!client.isReady()) {
+                    //console.log('\x1b[33m[ V2 LAVALINK ]\x1b[0m Waiting for client to be ready...');
+                    await new Promise(resolve => client.once('ready', resolve));
+                }
 
+                //console.log('\x1b[34m[ V2 LAVALINK ]\x1b[0m Client ready, initializing Riffy...');
+                
+              
+                client.riffy.init(client.user.id);
+                
+                //console.log('\x1b[34m[ V2 LAVALINK ]\x1b[0m Riffy.init() called, waiting for node connection...');
+
+              
+                await Promise.race([
+                    new Promise((resolve) => {
+                        client.riffy.once('nodeConnect', resolve);
+                    }),
+                    new Promise((_, reject) => 
+                        setTimeout(() => reject(new Error('Node connection timeout after 15 seconds')), 15000)
+                    )
+                ]);
+
+                console.log('\x1b[35m[ V2 MUSIC ]\x1b[0m', '\x1b[32mAdvanced V2 Music System Active ✅\x1b[0m');
+
+            
+                setTimeout(async () => {
+                    try {
+                        for (const guild of client.guilds.cache.values()) {
+                            await advancedMessageManager.cleanupGuildMessages(client, guild.id);
+                        }
+                        //console.log('\x1b[34m[ V2 LAVALINK ]\x1b[0m Initial cleanup completed');
+                    } catch (cleanupError) {
+                        console.error('\x1b[33m[ V2 LAVALINK ]\x1b[0m Cleanup error:', cleanupError.message);
+                    }
+                }, 5000);
+
+            } catch (error) {
+                console.error('\x1b[31m[ V2 LAVALINK ]\x1b[0m Initialization failed:', error.message);
+                console.error('\x1b[31m[ V2 LAVALINK ]\x1b[0m Stack:', error.stack);
+                
+              
+                console.log('\x1b[33m[ V2 LAVALINK ]\x1b[0m Attempting to verify Lavalink server...');
+                try {
+                    const testUrl = `http${lavalinkConfig.lavalink.secure ? 's' : ''}://${lavalinkConfig.lavalink.host}:${lavalinkConfig.lavalink.port}/version`;
+                    console.log('\x1b[34m[ V2 LAVALINK ]\x1b[0m Testing:', testUrl);
+                    
+                    const response = await axios.get(testUrl, {
+                        headers: { 'Authorization': lavalinkConfig.lavalink.password },
+                        timeout: 5000
+                    });
+                    
+                    console.log('\x1b[32m[ V2 LAVALINK ]\x1b[0m Server is reachable. Version:', response.data);
+                    console.log('\x1b[33m[ V2 LAVALINK ]\x1b[0m Server is up but connection failed. Check Riffy compatibility.');
+                } catch (testError) {
+                    console.error('\x1b[31m[ V2 LAVALINK ]\x1b[0m Server not reachable:', testError.message);
+                    console.error('\x1b[31m[ V2 LAVALINK ]\x1b[0m Check your lavalink config and ensure the server is running.');
+                }
+            }
+        };
+
+       
+        initializeRiffy();
     } else {
         console.log('\x1b[31m[ V2 MUSIC ]\x1b[0m Lavalink Music System Disabled ❌');
     }
