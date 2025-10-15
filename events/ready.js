@@ -4,7 +4,7 @@ const colors = require('../UI/colors/colors');
 const config = require('../config');
 
 module.exports = {
-    name: 'ready',
+    name: 'clientReady',
     once: true,
     async execute(client) {
     
@@ -82,7 +82,7 @@ module.exports = {
                     activities: [customStatus.activity],
                     status: customStatus.activity.type === ActivityType.Streaming ? undefined : customStatus.status
                 });
-                //console.log(`${colors.cyan}[STATUS]${colors.reset} Using custom status: ${customStatus.activity.name}`);
+                console.log(`${colors.cyan}[STATUS]${colors.reset} Using custom status: ${customStatus.activity.name}`);
                 return;
             }
 
@@ -136,7 +136,7 @@ module.exports = {
             const newInterval = statusDoc?.interval ? statusDoc.interval * 1000 : 10000;
             
             if (newInterval !== currentInterval) {
-                //console.log(`${colors.cyan}[STATUS]${colors.reset} Updating interval to ${newInterval / 1000} seconds`);
+                console.log(`${colors.cyan}[STATUS]${colors.reset} Updating interval to ${newInterval / 1000} seconds`);
                 currentInterval = newInterval;
             }
             
