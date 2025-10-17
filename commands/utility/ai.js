@@ -100,297 +100,297 @@ module.exports = {
             )
             .setRequired(false)))
 
-.addSubcommand(subcommand =>
-  subcommand
-    .setName("research")
-    .setDescription("Conduct research and compile comprehensive reports")
-    .addStringOption(option =>
-      option.setName("topic")
-        .setDescription("Research topic or question")
-        .setRequired(true))
-    .addStringOption(option =>
-      option.setName("depth")
-        .setDescription("Research depth and focus")
-        .addChoices(
-          { name: 'Quick Overview 📋', value: 'overview' },
-          { name: 'Detailed Analysis 🔍', value: 'detailed' },
-          { name: 'Comprehensive Report 📊', value: 'comprehensive' },
-          { name: 'Academic Level 🎓', value: 'academic' },
-          { name: 'Business Intelligence 💼', value: 'business' }
-        )
-        .setRequired(false))
-    .addStringOption(option =>
-      option.setName("format")
-        .setDescription("Output format")
-        .addChoices(
-          { name: 'Report Format', value: 'report' },
-          { name: 'Bullet Points', value: 'bullets' },
-          { name: 'FAQ Style', value: 'faq' },
-          { name: 'Presentation Outline', value: 'presentation' }
-        )
-        .setRequired(false)))
+    .addSubcommand(subcommand =>
+      subcommand
+        .setName("research")
+        .setDescription("Conduct research and compile comprehensive reports")
+        .addStringOption(option =>
+          option.setName("topic")
+            .setDescription("Research topic or question")
+            .setRequired(true))
+        .addStringOption(option =>
+          option.setName("depth")
+            .setDescription("Research depth and focus")
+            .addChoices(
+              { name: 'Quick Overview 📋', value: 'overview' },
+              { name: 'Detailed Analysis 🔍', value: 'detailed' },
+              { name: 'Comprehensive Report 📊', value: 'comprehensive' },
+              { name: 'Academic Level 🎓', value: 'academic' },
+              { name: 'Business Intelligence 💼', value: 'business' }
+            )
+            .setRequired(false))
+        .addStringOption(option =>
+          option.setName("format")
+            .setDescription("Output format")
+            .addChoices(
+              { name: 'Report Format', value: 'report' },
+              { name: 'Bullet Points', value: 'bullets' },
+              { name: 'FAQ Style', value: 'faq' },
+              { name: 'Presentation Outline', value: 'presentation' }
+            )
+            .setRequired(false)))
 
-.addSubcommand(subcommand =>
-  subcommand
-    .setName("translate")
-    .setDescription("Advanced translation with context and cultural nuances")
-    .addStringOption(option =>
-      option.setName("text")
-        .setDescription("Text to translate")
-        .setRequired(true))
-    .addStringOption(option =>
-      option.setName("target_language")
-        .setDescription("Target language")
-        .addChoices(
-          { name: 'Spanish 🇪🇸', value: 'spanish' },
-          { name: 'French 🇫🇷', value: 'french' },
-          { name: 'German 🇩🇪', value: 'german' },
-          { name: 'Italian 🇮🇹', value: 'italian' },
-          { name: 'Japanese 🇯🇵', value: 'japanese' },
-          { name: 'Chinese 🇨🇳', value: 'chinese' },
-          { name: 'Korean 🇰🇷', value: 'korean' },
-          { name: 'Russian 🇷🇺', value: 'russian' },
-          { name: 'Arabic 🇸🇦', value: 'arabic' },
-          { name: 'Hindi 🇮🇳', value: 'hindi' }
-        )
-        .setRequired(true))
-    .addStringOption(option =>
-      option.setName("style")
-        .setDescription("Translation style")
-        .addChoices(
-          { name: 'Formal/Professional', value: 'formal' },
-          { name: 'Casual/Conversational', value: 'casual' },
-          { name: 'Technical/Precise', value: 'technical' },
-          { name: 'Creative/Literary', value: 'creative' },
-          { name: 'Business/Commercial', value: 'business' }
-        )
-        .setRequired(false))
-    .addStringOption(option =>
-      option.setName("context")
-        .setDescription("Context or setting for better translation")
-        .setRequired(false)))
+    .addSubcommand(subcommand =>
+      subcommand
+        .setName("translate")
+        .setDescription("Advanced translation with context and cultural nuances")
+        .addStringOption(option =>
+          option.setName("text")
+            .setDescription("Text to translate")
+            .setRequired(true))
+        .addStringOption(option =>
+          option.setName("target_language")
+            .setDescription("Target language")
+            .addChoices(
+              { name: 'Spanish 🇪🇸', value: 'spanish' },
+              { name: 'French 🇫🇷', value: 'french' },
+              { name: 'German 🇩🇪', value: 'german' },
+              { name: 'Italian 🇮🇹', value: 'italian' },
+              { name: 'Japanese 🇯🇵', value: 'japanese' },
+              { name: 'Chinese 🇨🇳', value: 'chinese' },
+              { name: 'Korean 🇰🇷', value: 'korean' },
+              { name: 'Russian 🇷🇺', value: 'russian' },
+              { name: 'Arabic 🇸🇦', value: 'arabic' },
+              { name: 'Hindi 🇮🇳', value: 'hindi' }
+            )
+            .setRequired(true))
+        .addStringOption(option =>
+          option.setName("style")
+            .setDescription("Translation style")
+            .addChoices(
+              { name: 'Formal/Professional', value: 'formal' },
+              { name: 'Casual/Conversational', value: 'casual' },
+              { name: 'Technical/Precise', value: 'technical' },
+              { name: 'Creative/Literary', value: 'creative' },
+              { name: 'Business/Commercial', value: 'business' }
+            )
+            .setRequired(false))
+        .addStringOption(option =>
+          option.setName("context")
+            .setDescription("Context or setting for better translation")
+            .setRequired(false)))
 
-.addSubcommand(subcommand =>
-  subcommand
-    .setName("proofread")
-    .setDescription("Professional proofreading and editing with suggestions")
-    .addStringOption(option =>
-      option.setName("text")
-        .setDescription("Text to proofread and edit")
-        .setRequired(true))
-    .addStringOption(option =>
-      option.setName("level")
-        .setDescription("Editing level")
-        .addChoices(
-          { name: 'Grammar & Spelling Only 📝', value: 'grammar' },
-          { name: 'Style & Clarity 🎯', value: 'style' },
-          { name: 'Comprehensive Edit ✨', value: 'comprehensive' },
-          { name: 'Academic Standards 🎓', value: 'academic' },
-          { name: 'Business Professional 💼', value: 'business' }
-        )
-        .setRequired(false))
-    .addStringOption(option =>
-      option.setName("document_type")
-        .setDescription("Type of document")
-        .addChoices(
-          { name: 'Essay/Article', value: 'essay' },
-          { name: 'Business Document', value: 'business' },
-          { name: 'Email/Letter', value: 'correspondence' },
-          { name: 'Creative Writing', value: 'creative' },
-          { name: 'Technical/Manual', value: 'technical' }
-        )
-        .setRequired(false)))
+    .addSubcommand(subcommand =>
+      subcommand
+        .setName("proofread")
+        .setDescription("Professional proofreading and editing with suggestions")
+        .addStringOption(option =>
+          option.setName("text")
+            .setDescription("Text to proofread and edit")
+            .setRequired(true))
+        .addStringOption(option =>
+          option.setName("level")
+            .setDescription("Editing level")
+            .addChoices(
+              { name: 'Grammar & Spelling Only 📝', value: 'grammar' },
+              { name: 'Style & Clarity 🎯', value: 'style' },
+              { name: 'Comprehensive Edit ✨', value: 'comprehensive' },
+              { name: 'Academic Standards 🎓', value: 'academic' },
+              { name: 'Business Professional 💼', value: 'business' }
+            )
+            .setRequired(false))
+        .addStringOption(option =>
+          option.setName("document_type")
+            .setDescription("Type of document")
+            .addChoices(
+              { name: 'Essay/Article', value: 'essay' },
+              { name: 'Business Document', value: 'business' },
+              { name: 'Email/Letter', value: 'correspondence' },
+              { name: 'Creative Writing', value: 'creative' },
+              { name: 'Technical/Manual', value: 'technical' }
+            )
+            .setRequired(false)))
 
-.addSubcommand(subcommand =>
-  subcommand
-    .setName("curriculum")
-    .setDescription("Create learning curriculums and educational content")
-    .addStringOption(option =>
-      option.setName("subject")
-        .setDescription("Subject or skill to create curriculum for")
-        .setRequired(true))
-    .addStringOption(option =>
-      option.setName("level")
-        .setDescription("Difficulty level")
-        .addChoices(
-          { name: 'Beginner 🌱', value: 'beginner' },
-          { name: 'Intermediate 📈', value: 'intermediate' },
-          { name: 'Advanced 🎯', value: 'advanced' },
-          { name: 'Expert/Professional 🏆', value: 'expert' },
-          { name: 'Mixed Levels 📊', value: 'mixed' }
-        )
-        .setRequired(false))
-    .addStringOption(option =>
-      option.setName("duration")
-        .setDescription("Course duration")
-        .addChoices(
-          { name: '1 Week Crash Course', value: 'week' },
-          { name: '1 Month Program', value: 'month' },
-          { name: '3 Month Course', value: 'quarter' },
-          { name: '6 Month Program', value: 'semester' },
-          { name: 'Full Year Course', value: 'year' }
-        )
-        .setRequired(false))
-    .addStringOption(option =>
-      option.setName("focus")
-        .setDescription("Special focus or goal")
-        .addChoices(
-          { name: 'Practical/Hands-on', value: 'practical' },
-          { name: 'Theoretical/Academic', value: 'theoretical' },
-          { name: 'Certification Prep', value: 'certification' },
-          { name: 'Career Change', value: 'career' },
-          { name: 'Personal Interest', value: 'personal' }
-        )
-        .setRequired(false)))
+    .addSubcommand(subcommand =>
+      subcommand
+        .setName("curriculum")
+        .setDescription("Create learning curriculums and educational content")
+        .addStringOption(option =>
+          option.setName("subject")
+            .setDescription("Subject or skill to create curriculum for")
+            .setRequired(true))
+        .addStringOption(option =>
+          option.setName("level")
+            .setDescription("Difficulty level")
+            .addChoices(
+              { name: 'Beginner 🌱', value: 'beginner' },
+              { name: 'Intermediate 📈', value: 'intermediate' },
+              { name: 'Advanced 🎯', value: 'advanced' },
+              { name: 'Expert/Professional 🏆', value: 'expert' },
+              { name: 'Mixed Levels 📊', value: 'mixed' }
+            )
+            .setRequired(false))
+        .addStringOption(option =>
+          option.setName("duration")
+            .setDescription("Course duration")
+            .addChoices(
+              { name: '1 Week Crash Course', value: 'week' },
+              { name: '1 Month Program', value: 'month' },
+              { name: '3 Month Course', value: 'quarter' },
+              { name: '6 Month Program', value: 'semester' },
+              { name: 'Full Year Course', value: 'year' }
+            )
+            .setRequired(false))
+        .addStringOption(option =>
+          option.setName("focus")
+            .setDescription("Special focus or goal")
+            .addChoices(
+              { name: 'Practical/Hands-on', value: 'practical' },
+              { name: 'Theoretical/Academic', value: 'theoretical' },
+              { name: 'Certification Prep', value: 'certification' },
+              { name: 'Career Change', value: 'career' },
+              { name: 'Personal Interest', value: 'personal' }
+            )
+            .setRequired(false)))
 
-.addSubcommand(subcommand =>
-  subcommand
-    .setName("presentation")
-    .setDescription("Create complete presentations with slides and speaker notes")
-    .addStringOption(option =>
-      option.setName("topic")
-        .setDescription("Presentation topic")
-        .setRequired(true))
-    .addStringOption(option =>
-      option.setName("audience")
-        .setDescription("Target audience")
-        .addChoices(
-          { name: 'Business/Corporate 💼', value: 'business' },
-          { name: 'Academic/Educational 🎓', value: 'academic' },
-          { name: 'Technical/Engineering 🔧', value: 'technical' },
-          { name: 'Sales/Marketing 📈', value: 'sales' },
-          { name: 'General Public 👥', value: 'general' },
-          { name: 'Students 📚', value: 'students' },
-          { name: 'Investors 💰', value: 'investors' }
-        )
-        .setRequired(false))
-    .addIntegerOption(option =>
-      option.setName("slides")
-        .setDescription("Number of slides (5-30)")
-        .setMinValue(5)
-        .setMaxValue(30)
-        .setRequired(false))
-    .addStringOption(option =>
-      option.setName("style")
-        .setDescription("Presentation style")
-        .addChoices(
-          { name: 'Informative', value: 'informative' },
-          { name: 'Persuasive', value: 'persuasive' },
-          { name: 'Training/Workshop', value: 'training' },
-          { name: 'Pitch/Proposal', value: 'pitch' },
-          { name: 'Report/Update', value: 'report' }
-        )
-        .setRequired(false)))
+    .addSubcommand(subcommand =>
+      subcommand
+        .setName("presentation")
+        .setDescription("Create complete presentations with slides and speaker notes")
+        .addStringOption(option =>
+          option.setName("topic")
+            .setDescription("Presentation topic")
+            .setRequired(true))
+        .addStringOption(option =>
+          option.setName("audience")
+            .setDescription("Target audience")
+            .addChoices(
+              { name: 'Business/Corporate 💼', value: 'business' },
+              { name: 'Academic/Educational 🎓', value: 'academic' },
+              { name: 'Technical/Engineering 🔧', value: 'technical' },
+              { name: 'Sales/Marketing 📈', value: 'sales' },
+              { name: 'General Public 👥', value: 'general' },
+              { name: 'Students 📚', value: 'students' },
+              { name: 'Investors 💰', value: 'investors' }
+            )
+            .setRequired(false))
+        .addIntegerOption(option =>
+          option.setName("slides")
+            .setDescription("Number of slides (5-30)")
+            .setMinValue(5)
+            .setMaxValue(30)
+            .setRequired(false))
+        .addStringOption(option =>
+          option.setName("style")
+            .setDescription("Presentation style")
+            .addChoices(
+              { name: 'Informative', value: 'informative' },
+              { name: 'Persuasive', value: 'persuasive' },
+              { name: 'Training/Workshop', value: 'training' },
+              { name: 'Pitch/Proposal', value: 'pitch' },
+              { name: 'Report/Update', value: 'report' }
+            )
+            .setRequired(false)))
 
-.addSubcommand(subcommand =>
-  subcommand
-    .setName("seo_content")
-    .setDescription("Create SEO-optimized content with keyword analysis")
-    .addStringOption(option =>
-      option.setName("topic")
-        .setDescription("Content topic or main keyword")
-        .setRequired(true))
-    .addStringOption(option =>
-      option.setName("content_type")
-        .setDescription("Type of content to create")
-        .addChoices(
-          { name: 'Blog Article 📝', value: 'blog' },
-          { name: 'Product Description 🛍️', value: 'product' },
-          { name: 'Landing Page 🎯', value: 'landing' },
-          { name: 'Meta Tags 🏷️', value: 'meta' },
-          { name: 'Social Media Posts 📱', value: 'social' },
-          { name: 'FAQ Section ❓', value: 'faq' },
-          { name: 'Category Page 📂', value: 'category' }
-        )
-        .setRequired(false))
-    .addStringOption(option =>
-      option.setName("target_keywords")
-        .setDescription("Additional keywords to include (comma-separated)")
-        .setRequired(false))
-    .addIntegerOption(option =>
-      option.setName("word_count")
-        .setDescription("Target word count (300-3000)")
-        .setMinValue(300)
-        .setMaxValue(3000)
-        .setRequired(false)))
+    .addSubcommand(subcommand =>
+      subcommand
+        .setName("seo_content")
+        .setDescription("Create SEO-optimized content with keyword analysis")
+        .addStringOption(option =>
+          option.setName("topic")
+            .setDescription("Content topic or main keyword")
+            .setRequired(true))
+        .addStringOption(option =>
+          option.setName("content_type")
+            .setDescription("Type of content to create")
+            .addChoices(
+              { name: 'Blog Article 📝', value: 'blog' },
+              { name: 'Product Description 🛍️', value: 'product' },
+              { name: 'Landing Page 🎯', value: 'landing' },
+              { name: 'Meta Tags 🏷️', value: 'meta' },
+              { name: 'Social Media Posts 📱', value: 'social' },
+              { name: 'FAQ Section ❓', value: 'faq' },
+              { name: 'Category Page 📂', value: 'category' }
+            )
+            .setRequired(false))
+        .addStringOption(option =>
+          option.setName("target_keywords")
+            .setDescription("Additional keywords to include (comma-separated)")
+            .setRequired(false))
+        .addIntegerOption(option =>
+          option.setName("word_count")
+            .setDescription("Target word count (300-3000)")
+            .setMinValue(300)
+            .setMaxValue(3000)
+            .setRequired(false)))
 
-.addSubcommand(subcommand =>
-  subcommand
-    .setName("legal_doc")
-    .setDescription("Generate legal documents and contracts (for reference only)")
-    .addStringOption(option =>
-      option.setName("document_type")
-        .setDescription("Type of legal document")
-        .addChoices(
-          { name: 'Terms of Service 📋', value: 'terms' },
-          { name: 'Privacy Policy 🔒', value: 'privacy' },
-          { name: 'Non-Disclosure Agreement 🤐', value: 'nda' },
-          { name: 'Service Agreement 🤝', value: 'service' },
-          { name: 'Employment Contract 💼', value: 'employment' },
-          { name: 'Rental Agreement 🏠', value: 'rental' },
-          { name: 'Invoice Template 💰', value: 'invoice' },
-          { name: 'Disclaimer 📝', value: 'disclaimer' }
-        )
-        .setRequired(true))
-    .addStringOption(option =>
-      option.setName("business_info")
-        .setDescription("Business/entity information (name, industry, location)")
-        .setRequired(false))
-    .addStringOption(option =>
-      option.setName("specific_terms")
-        .setDescription("Specific terms, conditions, or requirements to include")
-        .setRequired(false))
-    .addStringOption(option =>
-      option.setName("jurisdiction")
-        .setDescription("Legal jurisdiction/location")
-        .addChoices(
-          { name: 'United States', value: 'us' },
-          { name: 'European Union', value: 'eu' },
-          { name: 'United Kingdom', value: 'uk' },
-          { name: 'Canada', value: 'ca' },
-          { name: 'Australia', value: 'au' },
-          { name: 'Other/Generic', value: 'generic' }
-        )
-        .setRequired(false)))
+    .addSubcommand(subcommand =>
+      subcommand
+        .setName("legal_doc")
+        .setDescription("Generate legal documents and contracts (for reference only)")
+        .addStringOption(option =>
+          option.setName("document_type")
+            .setDescription("Type of legal document")
+            .addChoices(
+              { name: 'Terms of Service 📋', value: 'terms' },
+              { name: 'Privacy Policy 🔒', value: 'privacy' },
+              { name: 'Non-Disclosure Agreement 🤐', value: 'nda' },
+              { name: 'Service Agreement 🤝', value: 'service' },
+              { name: 'Employment Contract 💼', value: 'employment' },
+              { name: 'Rental Agreement 🏠', value: 'rental' },
+              { name: 'Invoice Template 💰', value: 'invoice' },
+              { name: 'Disclaimer 📝', value: 'disclaimer' }
+            )
+            .setRequired(true))
+        .addStringOption(option =>
+          option.setName("business_info")
+            .setDescription("Business/entity information (name, industry, location)")
+            .setRequired(false))
+        .addStringOption(option =>
+          option.setName("specific_terms")
+            .setDescription("Specific terms, conditions, or requirements to include")
+            .setRequired(false))
+        .addStringOption(option =>
+          option.setName("jurisdiction")
+            .setDescription("Legal jurisdiction/location")
+            .addChoices(
+              { name: 'United States', value: 'us' },
+              { name: 'European Union', value: 'eu' },
+              { name: 'United Kingdom', value: 'uk' },
+              { name: 'Canada', value: 'ca' },
+              { name: 'Australia', value: 'au' },
+              { name: 'Other/Generic', value: 'generic' }
+            )
+            .setRequired(false)))
 
-.addSubcommand(subcommand =>
-  subcommand
-    .setName("qa_generator")
-    .setDescription("Generate comprehensive Q&A sets and knowledge bases")
-    .addStringOption(option =>
-      option.setName("topic")
-        .setDescription("Topic or subject for Q&A generation")
-        .setRequired(true))
-    .addStringOption(option =>
-      option.setName("question_type")
-        .setDescription("Type of questions to generate")
-        .addChoices(
-          { name: 'FAQ for Customers 💬', value: 'faq' },
-          { name: 'Interview Questions 👔', value: 'interview' },
-          { name: 'Study/Exam Questions 📚', value: 'study' },
-          { name: 'Troubleshooting Q&A 🔧', value: 'troubleshooting' },
-          { name: 'Product Knowledge 🛍️', value: 'product' },
-          { name: 'Training Material 🎓', value: 'training' },
-          { name: 'Quiz/Assessment 📊', value: 'quiz' }
-        )
-        .setRequired(false))
-    .addIntegerOption(option =>
-      option.setName("count")
-        .setDescription("Number of Q&A pairs to generate (5-50)")
-        .setMinValue(5)
-        .setMaxValue(50)
-        .setRequired(false))
-    .addStringOption(option =>
-      option.setName("difficulty")
-        .setDescription("Question difficulty level")
-        .addChoices(
-          { name: 'Basic/Beginner', value: 'basic' },
-          { name: 'Intermediate', value: 'intermediate' },
-          { name: 'Advanced', value: 'advanced' },
-          { name: 'Expert/Professional', value: 'expert' },
-          { name: 'Mixed Levels', value: 'mixed' }
-        )
-        .setRequired(false)))
+    .addSubcommand(subcommand =>
+      subcommand
+        .setName("qa_generator")
+        .setDescription("Generate comprehensive Q&A sets and knowledge bases")
+        .addStringOption(option =>
+          option.setName("topic")
+            .setDescription("Topic or subject for Q&A generation")
+            .setRequired(true))
+        .addStringOption(option =>
+          option.setName("question_type")
+            .setDescription("Type of questions to generate")
+            .addChoices(
+              { name: 'FAQ for Customers 💬', value: 'faq' },
+              { name: 'Interview Questions 👔', value: 'interview' },
+              { name: 'Study/Exam Questions 📚', value: 'study' },
+              { name: 'Troubleshooting Q&A 🔧', value: 'troubleshooting' },
+              { name: 'Product Knowledge 🛍️', value: 'product' },
+              { name: 'Training Material 🎓', value: 'training' },
+              { name: 'Quiz/Assessment 📊', value: 'quiz' }
+            )
+            .setRequired(false))
+        .addIntegerOption(option =>
+          option.setName("count")
+            .setDescription("Number of Q&A pairs to generate (5-50)")
+            .setMinValue(5)
+            .setMaxValue(50)
+            .setRequired(false))
+        .addStringOption(option =>
+          option.setName("difficulty")
+            .setDescription("Question difficulty level")
+            .addChoices(
+              { name: 'Basic/Beginner', value: 'basic' },
+              { name: 'Intermediate', value: 'intermediate' },
+              { name: 'Advanced', value: 'advanced' },
+              { name: 'Expert/Professional', value: 'expert' },
+              { name: 'Mixed Levels', value: 'mixed' }
+            )
+            .setRequired(false)))
 
     .addSubcommand(subcommand =>
       subcommand
@@ -430,7 +430,7 @@ module.exports = {
               { name: 'SQL', value: 'sql' }
             )
             .setRequired(false)))
-    
+
 
     .addSubcommand(subcommand =>
       subcommand
@@ -457,7 +457,7 @@ module.exports = {
           option.setName("recipient")
             .setDescription("Who are you writing to? (boss, client, friend, etc.)")
             .setRequired(false)))
-    
+
     .addSubcommand(subcommand =>
       subcommand
         .setName("message")
@@ -491,7 +491,7 @@ module.exports = {
               { name: 'Serious & Direct 🎯', value: 'serious' }
             )
             .setRequired(false)))
-    
+
     .addSubcommand(subcommand =>
       subcommand
         .setName("letter")
@@ -517,7 +517,7 @@ module.exports = {
           option.setName("recipient")
             .setDescription("Who is this letter for? (company, person, etc.)")
             .setRequired(false)))
-    
+
     .addSubcommand(subcommand =>
       subcommand
         .setName("script")
@@ -552,7 +552,7 @@ module.exports = {
               { name: '10+ minutes 📚', value: 'long' }
             )
             .setRequired(false)))
-    
+
     .addSubcommand(subcommand =>
       subcommand
         .setName("rewrite")
@@ -585,7 +585,7 @@ module.exports = {
               { name: 'Persuasive', value: 'persuasive' }
             )
             .setRequired(false)))
-    
+
     .addSubcommand(subcommand =>
       subcommand
         .setName("brainstorm")
@@ -622,32 +622,32 @@ module.exports = {
       await interaction.deferReply();
 
       try {
-        const response = await aiManager.generateContent(question, { 
+        const response = await aiManager.generateContent(question, {
           model: "gemini-2.5-flash",
-          timeout: 30000 
+          timeout: 30000
         });
-        
+
         const answer = response.text();
-        
+
         const embed = new EmbedBuilder()
           .setColor('#4285f4')
           .setTitle('🤖 AI Response')
-          .setDescription(answer.length > 4000 ? answer.substring(0, 4000) + '...' : answer)
-          .addFields({ 
-            name: '❓ Question', 
+          .addFields({
+            name: '❓ Question',
             value: question.length > 1000 ? question.substring(0, 1000) + '...' : question,
-            inline: false 
+            inline: false
           })
           .setTimestamp()
           .setFooter({ text: 'Powered by Gemini AI' });
 
-        await interaction.editReply({ embeds: [embed] });
-        
+        await this.safeDescription(interaction, embed, answer);
+
       } catch (error) {
         console.error('AI Ask Error:', error);
         await interaction.editReply("❌ Error while asking Gemini AI.");
       }
     }
+
 
     if (subcommand === "image") {
       const prompt = interaction.options.getString("prompt");
@@ -668,10 +668,10 @@ module.exports = {
         }
 
         const result = await aiManager.generateImage(enhancedPrompt);
-        
+
         if (result.imageBuffer) {
-          const attachment = new AttachmentBuilder(result.imageBuffer, { 
-            name: 'gemini-generated-image.png' 
+          const attachment = new AttachmentBuilder(result.imageBuffer, {
+            name: 'gemini-generated-image.png'
           });
 
           const embed = new EmbedBuilder()
@@ -686,16 +686,16 @@ module.exports = {
             .setFooter({ text: 'Generated by Gemini AI' });
 
           if (result.textResponse) {
-            embed.addFields({ 
-              name: '🤖 AI Notes', 
+            embed.addFields({
+              name: '🤖 AI Notes',
               value: result.textResponse.length > 500 ? result.textResponse.substring(0, 500) + '...' : result.textResponse,
-              inline: false 
+              inline: false
             });
           }
 
-          await interaction.editReply({ 
-            embeds: [embed], 
-            files: [attachment] 
+          await interaction.editReply({
+            embeds: [embed],
+            files: [attachment]
           });
         } else {
           await interaction.editReply("❌ Failed to generate image. Please try a different prompt.");
@@ -718,11 +718,10 @@ module.exports = {
         }
         await new Promise(resolve => setTimeout(resolve, 1000));
         const result = await aiManager.analyzeImage(image.url, focus);
-        
+
         const embed = new EmbedBuilder()
           .setColor('#9b59b6')
           .setTitle('🔍 Image Analysis Results')
-          .setDescription(result.analysis)
           .addFields(
             { name: '🎯 Focus', value: focus.charAt(0).toUpperCase() + focus.slice(1), inline: true },
             { name: '🖼️ Image', value: `[View Image](${image.url})`, inline: true }
@@ -731,13 +730,14 @@ module.exports = {
           .setTimestamp()
           .setFooter({ text: 'Analyzed by Gemini AI' });
 
-        await interaction.editReply({ embeds: [embed] });
+        await this.safeDescription(interaction, embed, result.analysis);
 
       } catch (error) {
         console.error('AI Analysis Error:', error);
         await interaction.editReply("❌ Error while analyzing image.");
       }
     }
+
 
     if (subcommand === "story") {
       const prompt = interaction.options.getString("prompt");
@@ -747,11 +747,10 @@ module.exports = {
 
       try {
         const result = await aiManager.generateStory(prompt, genre, length);
-        
+
         const embed = new EmbedBuilder()
           .setColor('#e74c3c')
           .setTitle('📚 Generated Story')
-          .setDescription(result.story.length > 4000 ? result.story.substring(0, 4000) + '...' : result.story)
           .addFields(
             { name: '💡 Theme', value: prompt, inline: false },
             { name: '🎭 Genre', value: genre.charAt(0).toUpperCase() + genre.slice(1), inline: true },
@@ -760,13 +759,14 @@ module.exports = {
           .setTimestamp()
           .setFooter({ text: 'Story by Gemini AI' });
 
-        await interaction.editReply({ embeds: [embed] });
+        await this.safeDescription(interaction, embed, result.story);
 
       } catch (error) {
         console.error('AI Story Error:', error);
         await interaction.editReply("❌ Error while generating story.");
       }
     }
+
 
     if (subcommand === "summarize") {
       const text = interaction.options.getString("text");
@@ -775,11 +775,10 @@ module.exports = {
 
       try {
         const result = await aiManager.summarizeText(text, style);
-        
+
         const embed = new EmbedBuilder()
           .setColor('#3498db')
           .setTitle('📝 Text Summary')
-          .setDescription(result.summary)
           .addFields(
             { name: '📊 Style', value: style.charAt(0).toUpperCase() + style.slice(1), inline: true },
             { name: '📄 Original Length', value: `${text.length} characters`, inline: true }
@@ -787,14 +786,13 @@ module.exports = {
           .setTimestamp()
           .setFooter({ text: 'Summarized by Gemini AI' });
 
-        await interaction.editReply({ embeds: [embed] });
+        await this.safeDescription(interaction, embed, result.summary);
 
       } catch (error) {
         console.error('AI Summary Error:', error);
         await interaction.editReply("❌ Error while summarizing text.");
       }
     }
-
     if (subcommand === "code") {
       const request = interaction.options.getString("request");
       const language = interaction.options.getString("language") || 'general';
@@ -802,11 +800,10 @@ module.exports = {
 
       try {
         const result = await aiManager.helpWithCode(request, language);
-        
+
         const embed = new EmbedBuilder()
           .setColor('#f39c12')
           .setTitle('💻 Code Helper')
-          .setDescription(result.response.length > 3000 ? result.response.substring(0, 3000) + '...' : result.response)
           .addFields(
             { name: '❓ Request', value: request, inline: false },
             { name: '⚡ Language', value: language.charAt(0).toUpperCase() + language.slice(1), inline: true }
@@ -814,7 +811,7 @@ module.exports = {
           .setTimestamp()
           .setFooter({ text: 'Code help by Gemini AI' });
 
-        await interaction.editReply({ embeds: [embed] });
+        await this.safeDescription(interaction, embed, result.response);
 
       } catch (error) {
         console.error('AI Code Error:', error);
@@ -823,268 +820,247 @@ module.exports = {
     }
 
 
-if (subcommand === "research") {
-  const topic = interaction.options.getString("topic");
-  const depth = interaction.options.getString("depth") || 'detailed';
-  const format = interaction.options.getString("format") || 'report';
-  await interaction.deferReply();
 
-  try {
-    const result = await this.conductResearch(topic, depth, format);
-    
-    const embed = new EmbedBuilder()
-      .setColor('#16a085')
-      .setTitle('🔍 Research Report')
-      .setDescription(result.research.length > 3500 ? result.research.substring(0, 3500) + '...' : result.research)
-      .addFields(
-        { name: '🎯 Topic', value: topic, inline: false },
-        { name: '📊 Depth', value: depth.charAt(0).toUpperCase() + depth.slice(1), inline: true },
-        { name: '📋 Format', value: format.charAt(0).toUpperCase() + format.slice(1), inline: true }
-      )
-      .setTimestamp()
-      .setFooter({ text: 'Research compiled by Gemini AI' });
+    if (subcommand === "research") {
+      const topic = interaction.options.getString("topic");
+      const depth = interaction.options.getString("depth") || 'detailed';
+      const format = interaction.options.getString("format") || 'report';
+      await interaction.deferReply();
 
-    await interaction.editReply({ embeds: [embed] });
+      try {
+        const result = await this.conductResearch(topic, depth, format);
 
-  } catch (error) {
-    console.error('AI Research Error:', error);
-    await interaction.editReply("❌ Error while conducting research.");
-  }
-}
+        const embed = new EmbedBuilder()
+          .setColor('#16a085')
+          .setTitle('🔍 Research Report')
+          .addFields(
+            { name: '🎯 Topic', value: topic, inline: false },
+            { name: '📊 Depth', value: depth.charAt(0).toUpperCase() + depth.slice(1), inline: true },
+            { name: '📋 Format', value: format.charAt(0).toUpperCase() + format.slice(1), inline: true }
+          )
+          .setTimestamp()
+          .setFooter({ text: 'Research compiled by Gemini AI' });
 
-if (subcommand === "translate") {
-  const text = interaction.options.getString("text");
-  const targetLanguage = interaction.options.getString("target_language");
-  const style = interaction.options.getString("style") || 'formal';
-  const context = interaction.options.getString("context");
-  await interaction.deferReply();
+        await this.safeDescription(interaction, embed, result.research);
 
-  try {
-    const result = await this.translateText(text, targetLanguage, style, context);
-    
-    const embed = new EmbedBuilder()
-      .setColor('#e74c3c')
-      .setTitle('🌐 Advanced Translation')
-      .addFields(
-        { name: '📝 Original Text', value: text.length > 500 ? text.substring(0, 500) + '...' : text, inline: false },
-        { name: '✨ Translation', value: result.translation, inline: false },
-        { name: '🎯 Target Language', value: targetLanguage.charAt(0).toUpperCase() + targetLanguage.slice(1), inline: true },
-        { name: '🎭 Style', value: style.charAt(0).toUpperCase() + style.slice(1), inline: true }
-      )
-      .setTimestamp()
-      .setFooter({ text: 'Translated by Gemini AI with cultural context' });
-
-    if (result.notes) {
-      embed.addFields({ name: '📋 Translation Notes', value: result.notes, inline: false });
+      } catch (error) {
+        console.error('AI Research Error:', error);
+        await interaction.editReply("❌ Error while conducting research.");
+      }
     }
 
-    await interaction.editReply({ embeds: [embed] });
+    if (subcommand === "translate") {
+      const text = interaction.options.getString("text");
+      const targetLanguage = interaction.options.getString("target_language");
+      const style = interaction.options.getString("style") || 'formal';
+      const context = interaction.options.getString("context");
+      await interaction.deferReply();
 
-  } catch (error) {
-    console.error('AI Translation Error:', error);
-    await interaction.editReply("❌ Error while translating text.");
-  }
-}
+      try {
+        const result = await this.translateText(text, targetLanguage, style, context);
 
-if (subcommand === "proofread") {
-  const text = interaction.options.getString("text");
-  const level = interaction.options.getString("level") || 'comprehensive';
-  const documentType = interaction.options.getString("document_type") || 'general';
-  await interaction.deferReply();
+        const embed = new EmbedBuilder()
+          .setColor('#e74c3c')
+          .setTitle('🌐 Advanced Translation')
+          .addFields(
+            { name: '📝 Original Text', value: text.length > 500 ? text.substring(0, 500) + '...' : text, inline: false },
+            { name: '✨ Translation', value: result.translation, inline: false },
+            { name: '🎯 Target Language', value: targetLanguage.charAt(0).toUpperCase() + targetLanguage.slice(1), inline: true },
+            { name: '🎭 Style', value: style.charAt(0).toUpperCase() + style.slice(1), inline: true }
+          )
+          .setTimestamp()
+          .setFooter({ text: 'Translated by Gemini AI with cultural context' });
 
-  try {
-    const result = await this.proofreadText(text, level, documentType);
-    
-    const embed = new EmbedBuilder()
-      .setColor('#9b59b6')
-      .setTitle('✏️ Professional Proofreading')
-      .addFields(
-        { name: '📝 Original Text', value: text.length > 800 ? text.substring(0, 800) + '...' : text, inline: false },
-        { name: '✨ Corrected Version', value: result.corrected.length > 1200 ? result.corrected.substring(0, 1200) + '...' : result.corrected, inline: false },
-        { name: '📊 Editing Level', value: level.charAt(0).toUpperCase() + level.slice(1), inline: true },
-        { name: '📄 Document Type', value: documentType.charAt(0).toUpperCase() + documentType.slice(1), inline: true }
-      )
-      .setTimestamp()
-      .setFooter({ text: 'Proofread by Gemini AI' });
+        if (result.notes) {
+          embed.addFields({ name: '📋 Translation Notes', value: result.notes.substring(0, 1000), inline: false });
+        }
 
-    if (result.suggestions && result.suggestions.length > 0) {
-      embed.addFields({ 
-        name: '💡 Key Improvements', 
-        value: result.suggestions.substring(0, 800),
-        inline: false 
-      });
+        await interaction.editReply({ embeds: [embed] });
+
+      } catch (error) {
+        console.error('AI Translation Error:', error);
+        await interaction.editReply("❌ Error while translating text.");
+      }
     }
 
-    await interaction.editReply({ embeds: [embed] });
+    if (subcommand === "proofread") {
+      const text = interaction.options.getString("text");
+      const level = interaction.options.getString("level") || 'comprehensive';
+      const documentType = interaction.options.getString("document_type") || 'general';
+      await interaction.deferReply();
 
-  } catch (error) {
-    console.error('AI Proofread Error:', error);
-    await interaction.editReply("❌ Error while proofreading text.");
-  }
-}
+      try {
+        const result = await this.proofreadText(text, level, documentType);
 
-if (subcommand === "curriculum") {
-  const subject = interaction.options.getString("subject");
-  const level = interaction.options.getString("level") || 'intermediate';
-  const duration = interaction.options.getString("duration") || 'month';
-  const focus = interaction.options.getString("focus") || 'practical';
-  await interaction.deferReply();
+        const fullText = `**📝 Original Text:**\n${text.substring(0, 800)}\n\n**✨ Corrected Version:**\n${result.corrected}${result.suggestions ? `\n\n**💡 Key Improvements:**\n${result.suggestions}` : ''}`;
 
-  try {
-    const result = await this.createCurriculum(subject, level, duration, focus);
-    
-    const embed = new EmbedBuilder()
-      .setColor('#27ae60')
-      .setTitle('📚 Learning Curriculum')
-      .setDescription(result.curriculum.length > 3500 ? result.curriculum.substring(0, 3500) + '...' : result.curriculum)
-      .addFields(
-        { name: '🎯 Subject', value: subject, inline: false },
-        { name: '📈 Level', value: level.charAt(0).toUpperCase() + level.slice(1), inline: true },
-        { name: '⏰ Duration', value: duration.charAt(0).toUpperCase() + duration.slice(1), inline: true },
-        { name: '🎨 Focus', value: focus.charAt(0).toUpperCase() + focus.slice(1), inline: true }
-      )
-      .setTimestamp()
-      .setFooter({ text: 'Curriculum designed by Gemini AI' });
+        const embed = new EmbedBuilder()
+          .setColor('#9b59b6')
+          .setTitle('✏️ Professional Proofreading')
+          .addFields(
+            { name: '📊 Editing Level', value: level.charAt(0).toUpperCase() + level.slice(1), inline: true },
+            { name: '📄 Document Type', value: documentType.charAt(0).toUpperCase() + documentType.slice(1), inline: true }
+          )
+          .setTimestamp()
+          .setFooter({ text: 'Proofread by Gemini AI' });
 
-    await interaction.editReply({ embeds: [embed] });
+        await this.safeDescription(interaction, embed, fullText);
 
-  } catch (error) {
-    console.error('AI Curriculum Error:', error);
-    await interaction.editReply("❌ Error while creating curriculum.");
-  }
-}
-
-if (subcommand === "presentation") {
-  const topic = interaction.options.getString("topic");
-  const audience = interaction.options.getString("audience") || 'general';
-  const slides = interaction.options.getInteger("slides") || 10;
-  const style = interaction.options.getString("style") || 'informative';
-  await interaction.deferReply();
-
-  try {
-    const result = await this.createPresentation(topic, audience, slides, style);
-    
-    const embed = new EmbedBuilder()
-      .setColor('#3498db')
-      .setTitle('🎤 Presentation Created')
-      .setDescription(result.presentation.length > 3500 ? result.presentation.substring(0, 3500) + '...' : result.presentation)
-      .addFields(
-        { name: '🎯 Topic', value: topic, inline: false },
-        { name: '👥 Audience', value: audience.charAt(0).toUpperCase() + audience.slice(1), inline: true },
-        { name: '📊 Slides', value: slides.toString(), inline: true },
-        { name: '🎭 Style', value: style.charAt(0).toUpperCase() + style.slice(1), inline: true }
-      )
-      .setTimestamp()
-      .setFooter({ text: 'Presentation by Gemini AI' });
-
-    await interaction.editReply({ embeds: [embed] });
-
-  } catch (error) {
-    console.error('AI Presentation Error:', error);
-    await interaction.editReply("❌ Error while creating presentation.");
-  }
-}
-
-if (subcommand === "seo_content") {
-  const topic = interaction.options.getString("topic");
-  const contentType = interaction.options.getString("content_type") || 'blog';
-  const targetKeywords = interaction.options.getString("target_keywords");
-  const wordCount = interaction.options.getInteger("word_count") || 800;
-  await interaction.deferReply();
-
-  try {
-    const result = await this.createSEOContent(topic, contentType, targetKeywords, wordCount);
-    
-    const embed = new EmbedBuilder()
-      .setColor('#e67e22')
-      .setTitle('🔍 SEO-Optimized Content')
-      .setDescription(result.content.length > 3000 ? result.content.substring(0, 3000) + '...' : result.content)
-      .addFields(
-        { name: '🎯 Main Topic', value: topic, inline: false },
-        { name: '📝 Content Type', value: contentType.charAt(0).toUpperCase() + contentType.slice(1), inline: true },
-        { name: '📊 Word Count', value: wordCount.toString(), inline: true }
-      )
-      .setTimestamp()
-      .setFooter({ text: 'SEO content by Gemini AI' });
-
-    if (targetKeywords) {
-      embed.addFields({ name: '🏷️ Target Keywords', value: targetKeywords, inline: false });
+      } catch (error) {
+        console.error('AI Proofread Error:', error);
+        await interaction.editReply("❌ Error while proofreading text.");
+      }
     }
 
-    if (result.seoTips) {
-      embed.addFields({ name: '💡 SEO Tips', value: result.seoTips.substring(0, 500), inline: false });
+    if (subcommand === "curriculum") {
+      const subject = interaction.options.getString("subject");
+      const level = interaction.options.getString("level") || 'intermediate';
+      const duration = interaction.options.getString("duration") || 'month';
+      const focus = interaction.options.getString("focus") || 'practical';
+      await interaction.deferReply();
+
+      try {
+        const result = await this.createCurriculum(subject, level, duration, focus);
+
+        const embed = new EmbedBuilder()
+          .setColor('#27ae60')
+          .setTitle('📚 Learning Curriculum')
+          .addFields(
+            { name: '🎯 Subject', value: subject, inline: false },
+            { name: '📈 Level', value: level.charAt(0).toUpperCase() + level.slice(1), inline: true },
+            { name: '⏰ Duration', value: duration.charAt(0).toUpperCase() + duration.slice(1), inline: true },
+            { name: '🎨 Focus', value: focus.charAt(0).toUpperCase() + focus.slice(1), inline: true }
+          )
+          .setTimestamp()
+          .setFooter({ text: 'Curriculum designed by Gemini AI' });
+
+        await this.safeDescription(interaction, embed, result.curriculum);
+
+      } catch (error) {
+        console.error('AI Curriculum Error:', error);
+        await interaction.editReply("❌ Error while creating curriculum.");
+      }
+    }
+    if (subcommand === "presentation") {
+      const topic = interaction.options.getString("topic");
+      const audience = interaction.options.getString("audience") || 'general';
+      const slides = interaction.options.getInteger("slides") || 10;
+      const style = interaction.options.getString("style") || 'informative';
+      await interaction.deferReply();
+
+      try {
+        const result = await this.createPresentation(topic, audience, slides, style);
+
+        const embed = new EmbedBuilder()
+          .setColor('#3498db')
+          .setTitle('🎤 Presentation Created')
+          .addFields(
+            { name: '🎯 Topic', value: topic, inline: false },
+            { name: '👥 Audience', value: audience.charAt(0).toUpperCase() + audience.slice(1), inline: true },
+            { name: '📊 Slides', value: slides.toString(), inline: true },
+            { name: '🎭 Style', value: style.charAt(0).toUpperCase() + style.slice(1), inline: true }
+          )
+          .setTimestamp()
+          .setFooter({ text: 'Presentation by Gemini AI' });
+
+        await this.safeDescription(interaction, embed, result.presentation);
+
+      } catch (error) {
+        console.error('AI Presentation Error:', error);
+        await interaction.editReply("❌ Error while creating presentation.");
+      }
+    }
+    if (subcommand === "seo_content") {
+      const topic = interaction.options.getString("topic");
+      const contentType = interaction.options.getString("content_type") || 'blog';
+      const targetKeywords = interaction.options.getString("target_keywords");
+      const wordCount = interaction.options.getInteger("word_count") || 800;
+      await interaction.deferReply();
+
+      try {
+        const result = await this.createSEOContent(topic, contentType, targetKeywords, wordCount);
+
+        let fullText = result.content;
+        if (targetKeywords) fullText += `\n\n**🏷️ Target Keywords:** ${targetKeywords}`;
+        if (result.seoTips) fullText += `\n\n**💡 SEO Tips:**\n${result.seoTips}`;
+
+        const embed = new EmbedBuilder()
+          .setColor('#e67e22')
+          .setTitle('🔍 SEO-Optimized Content')
+          .addFields(
+            { name: '🎯 Main Topic', value: topic, inline: false },
+            { name: '📝 Content Type', value: contentType.charAt(0).toUpperCase() + contentType.slice(1), inline: true },
+            { name: '📊 Word Count', value: wordCount.toString(), inline: true }
+          )
+          .setTimestamp()
+          .setFooter({ text: 'SEO content by Gemini AI' });
+
+        await this.safeDescription(interaction, embed, fullText);
+
+      } catch (error) {
+        console.error('AI SEO Content Error:', error);
+        await interaction.editReply("❌ Error while creating SEO content.");
+      }
+    }
+    if (subcommand === "legal_doc") {
+      const documentType = interaction.options.getString("document_type");
+      const businessInfo = interaction.options.getString("business_info");
+      const specificTerms = interaction.options.getString("specific_terms");
+      const jurisdiction = interaction.options.getString("jurisdiction") || 'generic';
+      await interaction.deferReply();
+
+      try {
+        const result = await this.createLegalDocument(documentType, businessInfo, specificTerms, jurisdiction);
+
+        const fullText = '⚠️ **DISCLAIMER:** This is a template for reference only. Consult a qualified attorney for legal advice.\n\n' + result.document;
+
+        const embed = new EmbedBuilder()
+          .setColor('#8e44ad')
+          .setTitle('⚖️ Legal Document Template')
+          .addFields(
+            { name: '📝 Document Type', value: documentType.charAt(0).toUpperCase() + documentType.slice(1), inline: true },
+            { name: '🌍 Jurisdiction', value: jurisdiction.toUpperCase(), inline: true }
+          )
+          .setTimestamp()
+          .setFooter({ text: 'Legal template by Gemini AI - Not legal advice' });
+
+        await this.safeDescription(interaction, embed, fullText);
+
+      } catch (error) {
+        console.error('AI Legal Doc Error:', error);
+        await interaction.editReply("❌ Error while creating legal document.");
+      }
+    }
+    if (subcommand === "qa_generator") {
+      const topic = interaction.options.getString("topic");
+      const questionType = interaction.options.getString("question_type") || 'faq';
+      const count = interaction.options.getInteger("count") || 15;
+      const difficulty = interaction.options.getString("difficulty") || 'mixed';
+      await interaction.deferReply();
+
+      try {
+        const result = await this.generateQA(topic, questionType, count, difficulty);
+
+        const embed = new EmbedBuilder()
+          .setColor('#f39c12')
+          .setTitle('❓ Q&A Knowledge Base')
+          .addFields(
+            { name: '🎯 Topic', value: topic, inline: false },
+            { name: '💬 Question Type', value: questionType.charAt(0).toUpperCase() + questionType.slice(1), inline: true },
+            { name: '🔢 Questions Generated', value: count.toString(), inline: true },
+            { name: '📊 Difficulty', value: difficulty.charAt(0).toUpperCase() + difficulty.slice(1), inline: true }
+          )
+          .setTimestamp()
+          .setFooter({ text: 'Q&A generated by Gemini AI' });
+
+        await this.safeDescription(interaction, embed, result.qaSet);
+
+      } catch (error) {
+        console.error('AI Q&A Error:', error);
+        await interaction.editReply("❌ Error while generating Q&A.");
+      }
     }
 
-    await interaction.editReply({ embeds: [embed] });
-
-  } catch (error) {
-    console.error('AI SEO Content Error:', error);
-    await interaction.editReply("❌ Error while creating SEO content.");
-  }
-}
-
-if (subcommand === "legal_doc") {
-  const documentType = interaction.options.getString("document_type");
-  const businessInfo = interaction.options.getString("business_info");
-  const specificTerms = interaction.options.getString("specific_terms");
-  const jurisdiction = interaction.options.getString("jurisdiction") || 'generic';
-  await interaction.deferReply();
-
-  try {
-    const result = await this.createLegalDocument(documentType, businessInfo, specificTerms, jurisdiction);
-    
-    const embed = new EmbedBuilder()
-      .setColor('#8e44ad')
-      .setTitle('⚖️ Legal Document Template')
-      .setDescription('⚠️ **DISCLAIMER:** This is a template for reference only. Consult a qualified attorney for legal advice.\n\n' + 
-        (result.document.length > 3000 ? result.document.substring(0, 3000) + '...' : result.document))
-      .addFields(
-        { name: '📝 Document Type', value: documentType.charAt(0).toUpperCase() + documentType.slice(1), inline: true },
-        { name: '🌍 Jurisdiction', value: jurisdiction.toUpperCase(), inline: true }
-      )
-      .setTimestamp()
-      .setFooter({ text: 'Legal template by Gemini AI - Not legal advice' });
-
-    await interaction.editReply({ embeds: [embed] });
-
-  } catch (error) {
-    console.error('AI Legal Doc Error:', error);
-    await interaction.editReply("❌ Error while creating legal document.");
-  }
-}
-
-if (subcommand === "qa_generator") {
-  const topic = interaction.options.getString("topic");
-  const questionType = interaction.options.getString("question_type") || 'faq';
-  const count = interaction.options.getInteger("count") || 15;
-  const difficulty = interaction.options.getString("difficulty") || 'mixed';
-  await interaction.deferReply();
-
-  try {
-    const result = await this.generateQA(topic, questionType, count, difficulty);
-    
-    const embed = new EmbedBuilder()
-      .setColor('#f39c12')
-      .setTitle('❓ Q&A Knowledge Base')
-      .setDescription(result.qaSet.length > 3500 ? result.qaSet.substring(0, 3500) + '...' : result.qaSet)
-      .addFields(
-        { name: '🎯 Topic', value: topic, inline: false },
-        { name: '💬 Question Type', value: questionType.charAt(0).toUpperCase() + questionType.slice(1), inline: true },
-        { name: '🔢 Questions Generated', value: count.toString(), inline: true },
-        { name: '📊 Difficulty', value: difficulty.charAt(0).toUpperCase() + difficulty.slice(1), inline: true }
-      )
-      .setTimestamp()
-      .setFooter({ text: 'Q&A generated by Gemini AI' });
-
-    await interaction.editReply({ embeds: [embed] });
-
-  } catch (error) {
-    console.error('AI Q&A Error:', error);
-    await interaction.editReply("❌ Error while generating Q&A.");
-  }
-}
-
- 
     if (subcommand === "email") {
       const purpose = interaction.options.getString("purpose");
       const tone = interaction.options.getString("tone") || 'professional';
@@ -1093,11 +1069,10 @@ if (subcommand === "qa_generator") {
 
       try {
         const result = await this.generateEmail(purpose, tone, recipient);
-        
+
         const embed = new EmbedBuilder()
           .setColor('#27ae60')
           .setTitle('📧 Professional Email Generated')
-          .setDescription(result.email)
           .addFields(
             { name: '🎯 Purpose', value: purpose, inline: false },
             { name: '🎭 Tone', value: tone.charAt(0).toUpperCase() + tone.slice(1), inline: true },
@@ -1106,14 +1081,13 @@ if (subcommand === "qa_generator") {
           .setTimestamp()
           .setFooter({ text: 'Professional email by Gemini AI' });
 
-        await interaction.editReply({ embeds: [embed] });
+        await this.safeDescription(interaction, embed, result.email);
 
       } catch (error) {
         console.error('AI Email Error:', error);
         await interaction.editReply("❌ Error while generating email.");
       }
     }
-
     if (subcommand === "message") {
       const content = interaction.options.getString("content");
       const platform = interaction.options.getString("platform") || 'general';
@@ -1122,11 +1096,10 @@ if (subcommand === "qa_generator") {
 
       try {
         const result = await this.generateMessage(content, platform, style);
-        
+
         const embed = new EmbedBuilder()
           .setColor('#e67e22')
           .setTitle('💬 Message Crafted')
-          .setDescription(result.message)
           .addFields(
             { name: '💡 Content', value: content, inline: false },
             { name: '📱 Platform', value: platform.charAt(0).toUpperCase() + platform.slice(1), inline: true },
@@ -1135,14 +1108,13 @@ if (subcommand === "qa_generator") {
           .setTimestamp()
           .setFooter({ text: 'Message crafted by Gemini AI' });
 
-        await interaction.editReply({ embeds: [embed] });
+        await this.safeDescription(interaction, embed, result.message);
 
       } catch (error) {
         console.error('AI Message Error:', error);
         await interaction.editReply("❌ Error while crafting message.");
       }
     }
-
     if (subcommand === "letter") {
       const type = interaction.options.getString("type");
       const details = interaction.options.getString("details");
@@ -1151,11 +1123,10 @@ if (subcommand === "qa_generator") {
 
       try {
         const result = await this.generateLetter(type, details, recipient);
-        
+
         const embed = new EmbedBuilder()
           .setColor('#8e44ad')
           .setTitle('📄 Formal Letter Generated')
-          .setDescription(result.letter.length > 3500 ? result.letter.substring(0, 3500) + '...' : result.letter)
           .addFields(
             { name: '📝 Type', value: type.charAt(0).toUpperCase() + type.slice(1), inline: true },
             { name: '👤 Recipient', value: recipient || 'Not specified', inline: true },
@@ -1164,14 +1135,13 @@ if (subcommand === "qa_generator") {
           .setTimestamp()
           .setFooter({ text: 'Formal letter by Gemini AI' });
 
-        await interaction.editReply({ embeds: [embed] });
+        await this.safeDescription(interaction, embed, result.letter);
 
       } catch (error) {
         console.error('AI Letter Error:', error);
         await interaction.editReply("❌ Error while generating letter.");
       }
     }
-
     if (subcommand === "script") {
       const type = interaction.options.getString("type");
       const topic = interaction.options.getString("topic");
@@ -1181,11 +1151,10 @@ if (subcommand === "qa_generator") {
 
       try {
         const result = await this.generateScript(type, topic, audience, duration);
-        
+
         const embed = new EmbedBuilder()
           .setColor('#e74c3c')
           .setTitle('🎤 Script Generated')
-          .setDescription(result.script.length > 3500 ? result.script.substring(0, 3500) + '...' : result.script)
           .addFields(
             { name: '🎭 Type', value: type.charAt(0).toUpperCase() + type.slice(1), inline: true },
             { name: '📝 Topic', value: topic, inline: true },
@@ -1195,14 +1164,13 @@ if (subcommand === "qa_generator") {
           .setTimestamp()
           .setFooter({ text: 'Script by Gemini AI' });
 
-        await interaction.editReply({ embeds: [embed] });
+        await this.safeDescription(interaction, embed, result.script);
 
       } catch (error) {
         console.error('AI Script Error:', error);
         await interaction.editReply("❌ Error while generating script.");
       }
     }
-
     if (subcommand === "rewrite") {
       const text = interaction.options.getString("text");
       const goal = interaction.options.getString("goal") || 'clarity';
@@ -1211,26 +1179,27 @@ if (subcommand === "qa_generator") {
 
       try {
         const result = await this.rewriteText(text, goal, targetTone);
-        
+
+        const fullText = `**📝 Original:**\n${text.substring(0, 500)}\n\n**🎯 Improved Version:**\n${result.rewritten}`;
+
         const embed = new EmbedBuilder()
           .setColor('#2ecc71')
           .setTitle('✨ Text Rewritten')
           .addFields(
-            { name: '📝 Original', value: text.length > 500 ? text.substring(0, 500) + '...' : text, inline: false },
-            { name: '🎯 Improved Version', value: result.rewritten.length > 1500 ? result.rewritten.substring(0, 1500) + '...' : result.rewritten, inline: false },
             { name: '🎯 Goal', value: goal.charAt(0).toUpperCase() + goal.slice(1), inline: true },
             { name: '🎭 Tone', value: targetTone ? targetTone.charAt(0).toUpperCase() + targetTone.slice(1) : 'Original', inline: true }
           )
           .setTimestamp()
           .setFooter({ text: 'Rewritten by Gemini AI' });
 
-        await interaction.editReply({ embeds: [embed] });
+        await this.safeDescription(interaction, embed, fullText);
 
       } catch (error) {
         console.error('AI Rewrite Error:', error);
         await interaction.editReply("❌ Error while rewriting text.");
       }
     }
+
 
     if (subcommand === "brainstorm") {
       const topic = interaction.options.getString("topic");
@@ -1240,11 +1209,10 @@ if (subcommand === "qa_generator") {
 
       try {
         const result = await this.brainstormIdeas(topic, type, count);
-        
+
         const embed = new EmbedBuilder()
           .setColor('#f39c12')
           .setTitle('💡 Brainstorming Results')
-          .setDescription(result.ideas)
           .addFields(
             { name: '🎯 Topic', value: topic, inline: true },
             { name: '📝 Type', value: type.charAt(0).toUpperCase() + type.slice(1), inline: true },
@@ -1253,15 +1221,59 @@ if (subcommand === "qa_generator") {
           .setTimestamp()
           .setFooter({ text: 'Ideas generated by Gemini AI' });
 
-        await interaction.editReply({ embeds: [embed] });
+        await this.safeDescription(interaction, embed, result.ideas);
 
       } catch (error) {
         console.error('AI Brainstorm Error:', error);
         await interaction.editReply("❌ Error while brainstorming ideas.");
       }
     }
+
+  },
+  chunkText(text, maxLength = 3500) {
+    if (text.length <= maxLength) return [text];
+
+    const chunks = [];
+    let currentChunk = '';
+    const paragraphs = text.split('\n\n');
+
+    for (const paragraph of paragraphs) {
+      if ((currentChunk + paragraph + '\n\n').length > maxLength) {
+        if (currentChunk) chunks.push(currentChunk.trim());
+        currentChunk = paragraph + '\n\n';
+      } else {
+        currentChunk += paragraph + '\n\n';
+      }
+    }
+
+    if (currentChunk.trim()) chunks.push(currentChunk.trim());
+    return chunks;
   },
 
+
+  async safeDescription(interaction, embed, text) {
+    const chunks = this.chunkText(text, 3800);
+
+
+    embed.setDescription(chunks[0]);
+    await interaction.editReply({ embeds: [embed] });
+
+
+    if (chunks.length > 1) {
+      for (let i = 1; i < chunks.length && i < 10; i++) {
+        await new Promise(resolve => setTimeout(resolve, 200));
+
+        const followUpEmbed = new EmbedBuilder()
+          .setTitle(`${embed.data.title} (Part ${i + 1})`)
+          .setDescription(chunks[i])
+          .setColor(embed.data.color);
+
+        if (i === chunks.length - 1) followUpEmbed.setTimestamp();
+
+        await interaction.followUp({ embeds: [followUpEmbed] });
+      }
+    }
+  },
 
   async generateEmail(purpose, tone, recipient) {
     const tonePrompts = {
@@ -1412,23 +1424,23 @@ Provide the improved version while maintaining the original meaning and intent.`
   },
 
 
-async conductResearch(topic, depth, format) {
-  const depthPrompts = {
-    overview: "Provide a comprehensive overview with key points and basic information",
-    detailed: "Conduct detailed analysis with in-depth exploration of key aspects",
-    comprehensive: "Create a comprehensive research report with thorough investigation",
-    academic: "Write an academic-level analysis with scholarly depth and citations",
-    business: "Focus on business intelligence and practical applications"
-  };
+  async conductResearch(topic, depth, format) {
+    const depthPrompts = {
+      overview: "Provide a comprehensive overview with key points and basic information",
+      detailed: "Conduct detailed analysis with in-depth exploration of key aspects",
+      comprehensive: "Create a comprehensive research report with thorough investigation",
+      academic: "Write an academic-level analysis with scholarly depth and citations",
+      business: "Focus on business intelligence and practical applications"
+    };
 
-  const formatPrompts = {
-    report: "Format as a professional research report with sections and conclusions",
-    bullets: "Present information as organized bullet points and key highlights", 
-    faq: "Structure as frequently asked questions with detailed answers",
-    presentation: "Create as presentation outline with main points and sub-points"
-  };
+    const formatPrompts = {
+      report: "Format as a professional research report with sections and conclusions",
+      bullets: "Present information as organized bullet points and key highlights",
+      faq: "Structure as frequently asked questions with detailed answers",
+      presentation: "Create as presentation outline with main points and sub-points"
+    };
 
-  const prompt = `Research the following topic: ${topic}
+    const prompt = `Research the following topic: ${topic}
 
 ${depthPrompts[depth]}
 ${formatPrompts[format]}
@@ -1443,20 +1455,20 @@ Include:
 
 Make it comprehensive, accurate, and well-structured.`;
 
-  const response = await aiManager.generateContent(prompt, { timeout: 45000 });
-  return { research: response.text() };
-},
+    const response = await aiManager.generateContent(prompt, { timeout: 45000 });
+    return { research: response.text() };
+  },
 
-async translateText(text, targetLanguage, style, context) {
-  const stylePrompts = {
-    formal: "Use formal, professional language appropriate for business or official contexts",
-    casual: "Use casual, conversational tone suitable for everyday communication",
-    technical: "Maintain technical precision and specialized terminology",
-    creative: "Preserve creative elements, literary style, and artistic expression",
-    business: "Use business-appropriate language suitable for commercial contexts"
-  };
+  async translateText(text, targetLanguage, style, context) {
+    const stylePrompts = {
+      formal: "Use formal, professional language appropriate for business or official contexts",
+      casual: "Use casual, conversational tone suitable for everyday communication",
+      technical: "Maintain technical precision and specialized terminology",
+      creative: "Preserve creative elements, literary style, and artistic expression",
+      business: "Use business-appropriate language suitable for commercial contexts"
+    };
 
-  const prompt = `Translate the following text to ${targetLanguage}:
+    const prompt = `Translate the following text to ${targetLanguage}:
 
 "${text}"
 
@@ -1476,36 +1488,36 @@ Format your response as:
 TRANSLATION: [translated text]
 NOTES: [translation notes and explanations]`;
 
-  const response = await aiManager.generateContent(prompt, { timeout: 30000 });
-  const result = response.text();
-  
-  const translationMatch = result.match(/TRANSLATION:\s*(.*?)(?=NOTES:|$)/s);
-  const notesMatch = result.match(/NOTES:\s*(.*)/s);
+    const response = await aiManager.generateContent(prompt, { timeout: 30000 });
+    const result = response.text();
 
-  return {
-    translation: translationMatch ? translationMatch[1].trim() : result,
-    notes: notesMatch ? notesMatch[1].trim() : null
-  };
-},
+    const translationMatch = result.match(/TRANSLATION:\s*(.*?)(?=NOTES:|$)/s);
+    const notesMatch = result.match(/NOTES:\s*(.*)/s);
 
-async proofreadText(text, level, documentType) {
-  const levelPrompts = {
-    grammar: "Focus only on grammar, spelling, and punctuation corrections",
-    style: "Improve style, clarity, flow, and readability while fixing basic errors",
-    comprehensive: "Provide comprehensive editing including structure, tone, and content improvements",
-    academic: "Apply academic writing standards with formal tone and scholarly conventions",
-    business: "Ensure professional business communication standards and clarity"
-  };
+    return {
+      translation: translationMatch ? translationMatch[1].trim() : result,
+      notes: notesMatch ? notesMatch[1].trim() : null
+    };
+  },
 
-  const typePrompts = {
-    essay: "Apply essay writing conventions with clear thesis and supporting arguments",
-    business: "Ensure professional business document standards and formatting",
-    correspondence: "Apply professional correspondence etiquette and tone",
-    creative: "Preserve creative voice while improving technical accuracy",
-    technical: "Maintain technical precision while improving clarity and accessibility"
-  };
+  async proofreadText(text, level, documentType) {
+    const levelPrompts = {
+      grammar: "Focus only on grammar, spelling, and punctuation corrections",
+      style: "Improve style, clarity, flow, and readability while fixing basic errors",
+      comprehensive: "Provide comprehensive editing including structure, tone, and content improvements",
+      academic: "Apply academic writing standards with formal tone and scholarly conventions",
+      business: "Ensure professional business communication standards and clarity"
+    };
 
-  const prompt = `Proofread and edit the following text:
+    const typePrompts = {
+      essay: "Apply essay writing conventions with clear thesis and supporting arguments",
+      business: "Ensure professional business document standards and formatting",
+      correspondence: "Apply professional correspondence etiquette and tone",
+      creative: "Preserve creative voice while improving technical accuracy",
+      technical: "Maintain technical precision while improving clarity and accessibility"
+    };
+
+    const prompt = `Proofread and edit the following text:
 
 "${text}"
 
@@ -1518,44 +1530,44 @@ CORRECTED VERSION: [fully edited text]
 KEY IMPROVEMENTS: [list the main changes and improvements made]
 SUGGESTIONS: [additional recommendations for further improvement]`;
 
-  const response = await aiManager.generateContent(prompt, { timeout: 35000 });
-  const result = response.text();
-  
-  const correctedMatch = result.match(/CORRECTED VERSION:\s*(.*?)(?=KEY IMPROVEMENTS:|$)/s);
-  const suggestionsMatch = result.match(/(?:KEY IMPROVEMENTS:|SUGGESTIONS:)\s*(.*)/s);
+    const response = await aiManager.generateContent(prompt, { timeout: 35000 });
+    const result = response.text();
 
-  return {
-    corrected: correctedMatch ? correctedMatch[1].trim() : result,
-    suggestions: suggestionsMatch ? suggestionsMatch[1].trim() : null
-  };
-},
+    const correctedMatch = result.match(/CORRECTED VERSION:\s*(.*?)(?=KEY IMPROVEMENTS:|$)/s);
+    const suggestionsMatch = result.match(/(?:KEY IMPROVEMENTS:|SUGGESTIONS:)\s*(.*)/s);
 
-async createCurriculum(subject, level, duration, focus) {
-  const levelGuides = {
-    beginner: "Design for complete beginners with no prior experience",
-    intermediate: "Build on basic knowledge with more complex concepts", 
-    advanced: "Cover sophisticated topics for experienced learners",
-    expert: "Focus on mastery-level skills and professional expertise",
-    mixed: "Include progressive difficulty from basic to advanced"
-  };
+    return {
+      corrected: correctedMatch ? correctedMatch[1].trim() : result,
+      suggestions: suggestionsMatch ? suggestionsMatch[1].trim() : null
+    };
+  },
 
-  const durationStructures = {
-    week: "Intensive 7-day crash course with daily focused sessions",
-    month: "4-week program with weekly modules and daily activities",
-    quarter: "12-week comprehensive course with detailed progression",
-    semester: "6-month in-depth program with extensive coverage",
-    year: "Full-year comprehensive curriculum with seasonal modules"
-  };
+  async createCurriculum(subject, level, duration, focus) {
+    const levelGuides = {
+      beginner: "Design for complete beginners with no prior experience",
+      intermediate: "Build on basic knowledge with more complex concepts",
+      advanced: "Cover sophisticated topics for experienced learners",
+      expert: "Focus on mastery-level skills and professional expertise",
+      mixed: "Include progressive difficulty from basic to advanced"
+    };
 
-  const focusApproaches = {
-    practical: "Emphasize hands-on exercises, projects, and real-world applications",
-    theoretical: "Focus on underlying principles, concepts, and academic understanding",
-    certification: "Align with industry certifications and professional requirements",
-    career: "Target specific career objectives and job market needs",
-    personal: "Cater to personal interest and self-improvement goals"
-  };
+    const durationStructures = {
+      week: "Intensive 7-day crash course with daily focused sessions",
+      month: "4-week program with weekly modules and daily activities",
+      quarter: "12-week comprehensive course with detailed progression",
+      semester: "6-month in-depth program with extensive coverage",
+      year: "Full-year comprehensive curriculum with seasonal modules"
+    };
 
-  const prompt = `Create a comprehensive learning curriculum for: ${subject}
+    const focusApproaches = {
+      practical: "Emphasize hands-on exercises, projects, and real-world applications",
+      theoretical: "Focus on underlying principles, concepts, and academic understanding",
+      certification: "Align with industry certifications and professional requirements",
+      career: "Target specific career objectives and job market needs",
+      personal: "Cater to personal interest and self-improvement goals"
+    };
+
+    const prompt = `Create a comprehensive learning curriculum for: ${subject}
 
 Requirements:
 - ${levelGuides[level]}
@@ -1574,30 +1586,30 @@ Structure your curriculum with:
 
 Make it detailed, practical, and progressive.`;
 
-  const response = await aiManager.generateContent(prompt, { timeout: 40000 });
-  return { curriculum: response.text() };
-},
+    const response = await aiManager.generateContent(prompt, { timeout: 40000 });
+    return { curriculum: response.text() };
+  },
 
-async createPresentation(topic, audience, slides, style) {
-  const audienceAdaptations = {
-    business: "Use professional tone with business metrics and ROI focus",
-    academic: "Include scholarly references and research-based evidence",
-    technical: "Incorporate technical depth with specifications and data",
-    sales: "Focus on benefits, features, and compelling value propositions",
-    general: "Use accessible language and relatable examples",
-    students: "Include interactive elements and educational approaches",
-    investors: "Emphasize market opportunity, growth potential, and financial projections"
-  };
+  async createPresentation(topic, audience, slides, style) {
+    const audienceAdaptations = {
+      business: "Use professional tone with business metrics and ROI focus",
+      academic: "Include scholarly references and research-based evidence",
+      technical: "Incorporate technical depth with specifications and data",
+      sales: "Focus on benefits, features, and compelling value propositions",
+      general: "Use accessible language and relatable examples",
+      students: "Include interactive elements and educational approaches",
+      investors: "Emphasize market opportunity, growth potential, and financial projections"
+    };
 
-  const styleApproaches = {
-    informative: "Focus on clear information delivery with supporting data",
-    persuasive: "Build compelling arguments with strong calls to action",
-    training: "Include interactive elements and skill-building components",
-    pitch: "Create compelling narrative with problem-solution structure",
-    report: "Present findings and recommendations in structured format"
-  };
+    const styleApproaches = {
+      informative: "Focus on clear information delivery with supporting data",
+      persuasive: "Build compelling arguments with strong calls to action",
+      training: "Include interactive elements and skill-building components",
+      pitch: "Create compelling narrative with problem-solution structure",
+      report: "Present findings and recommendations in structured format"
+    };
 
-  const prompt = `Create a ${slides}-slide presentation about: ${topic}
+    const prompt = `Create a ${slides}-slide presentation about: ${topic}
 
 Presentation specifications:
 - ${audienceAdaptations[audience]}
@@ -1618,25 +1630,25 @@ Structure:
 
 Make it engaging, well-paced, and audience-appropriate.`;
 
-  const response = await aiManager.generateContent(prompt, { timeout: 40000 });
-  return { presentation: response.text() };
-},
+    const response = await aiManager.generateContent(prompt, { timeout: 40000 });
+    return { presentation: response.text() };
+  },
 
-async createSEOContent(topic, contentType, targetKeywords, wordCount) {
-  const contentTypePrompts = {
-    blog: "Write an engaging blog article with clear structure and SEO optimization",
-    product: "Create compelling product descriptions that drive conversions",
-    landing: "Develop landing page content that converts visitors to customers", 
-    meta: "Generate SEO meta titles, descriptions, and tags",
-    social: "Create social media content optimized for engagement and sharing",
-    faq: "Develop comprehensive FAQ content that answers user questions",
-    category: "Write category page content that helps users navigate and discover"
-  };
+  async createSEOContent(topic, contentType, targetKeywords, wordCount) {
+    const contentTypePrompts = {
+      blog: "Write an engaging blog article with clear structure and SEO optimization",
+      product: "Create compelling product descriptions that drive conversions",
+      landing: "Develop landing page content that converts visitors to customers",
+      meta: "Generate SEO meta titles, descriptions, and tags",
+      social: "Create social media content optimized for engagement and sharing",
+      faq: "Develop comprehensive FAQ content that answers user questions",
+      category: "Write category page content that helps users navigate and discover"
+    };
 
-  const keywords = targetKeywords ? targetKeywords.split(',').map(k => k.trim()) : [];
-  const keywordText = keywords.length > 0 ? `Target keywords: ${keywords.join(', ')}` : '';
+    const keywords = targetKeywords ? targetKeywords.split(',').map(k => k.trim()) : [];
+    const keywordText = keywords.length > 0 ? `Target keywords: ${keywords.join(', ')}` : '';
 
-  const prompt = `Create SEO-optimized content about: ${topic}
+    const prompt = `Create SEO-optimized content about: ${topic}
 
 Content specifications:
 - ${contentTypePrompts[contentType]}
@@ -1664,40 +1676,40 @@ Also provide:
 - Additional keyword suggestions
 - Internal linking opportunities`;
 
-  const response = await aiManager.generateContent(prompt, { timeout: 40000 });
-  const result = response.text();
-  
-  const contentMatch = result.match(/^(.*?)(?=SEO TIPS:|$)/s);
-  const tipsMatch = result.match(/SEO TIPS:\s*(.*)/s);
+    const response = await aiManager.generateContent(prompt, { timeout: 40000 });
+    const result = response.text();
 
-  return {
-    content: contentMatch ? contentMatch[1].trim() : result,
-    seoTips: tipsMatch ? tipsMatch[1].trim() : null
-  };
-},
+    const contentMatch = result.match(/^(.*?)(?=SEO TIPS:|$)/s);
+    const tipsMatch = result.match(/SEO TIPS:\s*(.*)/s);
 
-async createLegalDocument(documentType, businessInfo, specificTerms, jurisdiction) {
-  const documentPrompts = {
-    terms: "Create comprehensive Terms of Service agreement",
-    privacy: "Generate detailed Privacy Policy document",
-    nda: "Draft Non-Disclosure Agreement with standard protections",
-    service: "Create Service Agreement with clear obligations",
-    employment: "Generate Employment Contract with standard clauses",
-    rental: "Create Rental/Lease Agreement with tenant protections",
-    invoice: "Design professional Invoice Template with payment terms",
-    disclaimer: "Generate Disclaimer statement with liability limitations"
-  };
+    return {
+      content: contentMatch ? contentMatch[1].trim() : result,
+      seoTips: tipsMatch ? tipsMatch[1].trim() : null
+    };
+  },
 
-  const jurisdictionNotes = {
-    us: "Include US legal standards and regulations",
-    eu: "Comply with European Union regulations including GDPR",
-    uk: "Follow United Kingdom legal requirements",
-    ca: "Incorporate Canadian legal standards",
-    au: "Include Australian legal requirements",
-    generic: "Use general international legal principles"
-  };
+  async createLegalDocument(documentType, businessInfo, specificTerms, jurisdiction) {
+    const documentPrompts = {
+      terms: "Create comprehensive Terms of Service agreement",
+      privacy: "Generate detailed Privacy Policy document",
+      nda: "Draft Non-Disclosure Agreement with standard protections",
+      service: "Create Service Agreement with clear obligations",
+      employment: "Generate Employment Contract with standard clauses",
+      rental: "Create Rental/Lease Agreement with tenant protections",
+      invoice: "Design professional Invoice Template with payment terms",
+      disclaimer: "Generate Disclaimer statement with liability limitations"
+    };
 
-  const prompt = `Create a ${documentType} legal document template.
+    const jurisdictionNotes = {
+      us: "Include US legal standards and regulations",
+      eu: "Comply with European Union regulations including GDPR",
+      uk: "Follow United Kingdom legal requirements",
+      ca: "Incorporate Canadian legal standards",
+      au: "Include Australian legal requirements",
+      generic: "Use general international legal principles"
+    };
+
+    const prompt = `Create a ${documentType} legal document template.
 
 Requirements:
 - ${documentPrompts[documentType]}
@@ -1723,30 +1735,30 @@ Important disclaimers:
 
 Make it comprehensive but readable, with clear language and standard legal formatting.`;
 
-  const response = await aiManager.generateContent(prompt, { timeout: 35000 });
-  return { document: response.text() };
-},
+    const response = await aiManager.generateContent(prompt, { timeout: 35000 });
+    return { document: response.text() };
+  },
 
-async generateQA(topic, questionType, count, difficulty) {
-  const typePrompts = {
-    faq: "Generate frequently asked questions that customers typically have",
-    interview: "Create interview questions to assess knowledge and skills",
-    study: "Develop study questions for learning and exam preparation",
-    troubleshooting: "Generate troubleshooting Q&A for problem-solving",
-    product: "Create product knowledge questions for training purposes",
-    training: "Develop training questions for skill development",
-    quiz: "Generate quiz questions for assessment and evaluation"
-  };
+  async generateQA(topic, questionType, count, difficulty) {
+    const typePrompts = {
+      faq: "Generate frequently asked questions that customers typically have",
+      interview: "Create interview questions to assess knowledge and skills",
+      study: "Develop study questions for learning and exam preparation",
+      troubleshooting: "Generate troubleshooting Q&A for problem-solving",
+      product: "Create product knowledge questions for training purposes",
+      training: "Develop training questions for skill development",
+      quiz: "Generate quiz questions for assessment and evaluation"
+    };
 
-  const difficultyLevels = {
-    basic: "Focus on fundamental concepts and basic understanding",
-    intermediate: "Include moderate complexity requiring some experience",
-    advanced: "Create challenging questions for experienced users",
-    expert: "Develop professional-level questions for specialists",
-    mixed: "Include a range from basic to advanced difficulty levels"
-  };
+    const difficultyLevels = {
+      basic: "Focus on fundamental concepts and basic understanding",
+      intermediate: "Include moderate complexity requiring some experience",
+      advanced: "Create challenging questions for experienced users",
+      expert: "Develop professional-level questions for specialists",
+      mixed: "Include a range from basic to advanced difficulty levels"
+    };
 
-  const prompt = `Generate ${count} Q&A pairs about: ${topic}
+    const prompt = `Generate ${count} Q&A pairs about: ${topic}
 
 Requirements:
 - ${typePrompts[questionType]}
@@ -1772,9 +1784,9 @@ Difficulty: [Level]
 Make questions practical, relevant, and valuable for the intended purpose.
 Ensure answers are informative and actionable.`;
 
-  const response = await aiManager.generateContent(prompt, { timeout: 40000 });
-  return { qaSet: response.text() };
-},
+    const response = await aiManager.generateContent(prompt, { timeout: 40000 });
+    return { qaSet: response.text() };
+  },
   async brainstormIdeas(topic, type, count) {
     const typePrompts = {
       business: "Generate business and entrepreneurial ideas",
