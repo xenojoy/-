@@ -15,7 +15,7 @@
 > © 2025 GlaceYT.com | All rights reserved.
 */
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { 
+const {
     TextDisplayBuilder,
     ContainerBuilder,
     SectionBuilder,
@@ -27,7 +27,7 @@ const {
 const config = require('../../config.js');
 const checkPermissions = require('../../utils/checkPermissions');
 const restartConfirmations = new Map();
-const cmdIcons = require('../../UI/icons/commandicons');
+
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('manage-bot')
@@ -54,18 +54,11 @@ module.exports = {
                     .setDescription('New username for the bot')
                     .setRequired(true)))
         .addSubcommand(sub => sub
-            .setName('description')
-            .setDescription('Update bot about me section')
-            .addStringOption(option =>
-                option.setName('text')
-                    .setDescription('New description text')
-                    .setRequired(true)))
-        .addSubcommand(sub => sub
             .setName('restart')
             .setDescription('Restart bot processes (WARNING: Causes downtime)')),
 
     async execute(interaction) {
-            if (!await checkPermissions(interaction)) return;
+        if (!await checkPermissions(interaction)) return;
         try {
             let sender = interaction.user;
             let subcommand;
@@ -83,7 +76,7 @@ module.exports = {
                 subcommand = args[0] || 'help';
             }
 
-           
+
             const ownerId = config.ownerId;
             if (sender.id !== ownerId) {
                 const unauthorizedContainer = new ContainerBuilder()
@@ -106,7 +99,7 @@ module.exports = {
                 return isSlashCommand ? interaction.editReply(messageData) : interaction.reply(messageData);
             };
 
-         
+
             if (subcommand === 'pfp') {
                 const imageUrl = isSlashCommand ? interaction.options.getString('url') : interaction.content.split(' ')[2];
 
@@ -164,7 +157,7 @@ module.exports = {
                 }
             }
 
-    
+
             if (subcommand === 'banner') {
                 const imageUrl = isSlashCommand ? interaction.options.getString('url') : interaction.content.split(' ')[2];
 
@@ -209,7 +202,7 @@ module.exports = {
                 }
             }
 
-      
+
             if (subcommand === 'username') {
                 const newUsername = isSlashCommand ? interaction.options.getString('name') : interaction.content.split(' ').slice(2).join(' ');
 
@@ -255,65 +248,19 @@ module.exports = {
                 }
             }
 
-     
-            if (subcommand === 'description') {
-                const newDescription = isSlashCommand ? interaction.options.getString('text') : interaction.content.split(' ').slice(2).join(' ');
-
-                if (!newDescription) {
-                    const errorContainer = new ContainerBuilder().setAccentColor(0xff4757);
-                    errorContainer.addTextDisplayComponents(
-                        new TextDisplayBuilder()
-                            .setContent('# ❌ Missing Description\n## About Me Update Failed\n\n> Please provide new description text\n> Maximum length: 190 characters')
-                    );
-                    return sendReply([errorContainer]);
-                }
-
-                try {
-                    await client.user.setAboutMe(newDescription);
-
-                    const components = [];
-                    const successContainer = new ContainerBuilder().setAccentColor(0x9b59b6);
-                    successContainer.addTextDisplayComponents(
-                        new TextDisplayBuilder()
-                            .setContent('# ✅ Description Updated\n## About Me Section Modified\n\n> Bot description has been successfully updated\n> Professional information now displays on profile')
-                    );
-
-                    components.push(successContainer);
-                    components.push(new SeparatorBuilder().setSpacing(SeparatorSpacingSize.Large));
-
-                    const previewContainer = new ContainerBuilder().setAccentColor(0x8B5CF6);
-                    previewContainer.addTextDisplayComponents(
-                        new TextDisplayBuilder()
-                            .setContent(`## 📝 **Description Preview**\n\n**New About Me Text**\n"${newDescription}"\n\n**Character Count**\n${newDescription.length}/190 characters`)
-                    );
-
-                    components.push(previewContainer);
-                    return sendReply(components);
-
-                } catch (error) {
-                    const errorContainer = new ContainerBuilder().setAccentColor(0xE74C3C);
-                    errorContainer.addTextDisplayComponents(
-                        new TextDisplayBuilder()
-                            .setContent(`# ❌ Description Update Failed\n## About Me Error\n\n> Failed to update bot description\n> Error: ${error.message}`)
-                    );
-                    return sendReply([errorContainer]);
-                }
-            }
-
-          
             if (subcommand === 'restart') {
                 const userId = sender.id;
                 const now = Date.now();
-                
-            
+
+
                 if (restartConfirmations.has(userId)) {
                     const confirmTime = restartConfirmations.get(userId);
-                    
-                  
+
+
                     if (now - confirmTime <= 30000) {
-                  
+
                         restartConfirmations.delete(userId);
-                        
+
                         const components = [];
                         const restartingContainer = new ContainerBuilder().setAccentColor(0xe74c3c);
                         restartingContainer.addTextDisplayComponents(
@@ -324,23 +271,23 @@ module.exports = {
                         components.push(restartingContainer);
                         await sendReply(components);
 
-              
+
                         setTimeout(() => {
                             console.log('🔄 Bot restart initiated by owner:', sender.tag);
-                            process.exit(0); 
+                            process.exit(0);
                         }, 2000);
 
                         return;
                     } else {
-                  
+
                         restartConfirmations.delete(userId);
                     }
                 }
 
-              
+
                 restartConfirmations.set(userId, now);
 
-            
+
                 setTimeout(() => {
                     restartConfirmations.delete(userId);
                 }, 30000);
@@ -365,7 +312,7 @@ module.exports = {
                 return sendReply(components);
             }
 
-          
+
             const components = [];
             const helpContainer = new ContainerBuilder().setAccentColor(0x667eea);
             helpContainer.addTextDisplayComponents(
