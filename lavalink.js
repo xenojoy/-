@@ -3,9 +3,10 @@ module.exports = {
     enabled: true, 
     lavalink: {
       name: "GlaceYT",
-      password: "glace",
-      host: "87.106.62.92",
-      port:  11642,
+      password: "cocaine",
+      host: "pnode1.danbot.host",
+      port:  1351,
       secure: false
     }
 };
+
